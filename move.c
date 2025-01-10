@@ -24,6 +24,7 @@ void	swap_a(t_list **list_a)
 	first->next = second->next;
 	second->next = first;
 	*list_a = second;
+	ft_putstr_fd("sa", 1);
 }
 
 void	swap_b(t_list **list_b)
@@ -38,6 +39,7 @@ void	swap_b(t_list **list_b)
 	first->next = second->next;
 	second->next = first;
 	*list_b = second;
+	ft_putstr_fd("sb", 1);
 }
 
 void	push_a(t_list **list_a, t_list **list_b)
@@ -50,6 +52,7 @@ void	push_a(t_list **list_a, t_list **list_b)
 	*list_b = (*list_b)->next;
 	temp->next = *list_a;
 	*list_a = temp;
+	ft_putstr_fd("pa", 1);
 }
 
 void	push_b(t_list **list_b, t_list **list_a)
@@ -62,4 +65,5 @@ void	push_b(t_list **list_b, t_list **list_a)
 	*list_a = (*list_a)->next;
 	temp->next = *list_b;
 	*list_b = temp;
+	ft_putstr_fd("pb", 1);
 }

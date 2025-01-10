@@ -18,11 +18,11 @@
 # include <limits.h>
 # include "Libft/libft.h"
 
-typedef struct s_list
+typedef struct s_stack
 {
 	int				number;
-	struct s_list	*next;
-}	t_list;
+	struct s_stack	*next;
+}	t_stack;
 
 void	swap_a(t_list **list_a);
 void	swap_b(t_list **list_b);

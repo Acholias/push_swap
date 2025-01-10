@@ -6,7 +6,7 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 04:11:56 by lumugot           #+#    #+#             */
-/*   Updated: 2025/01/08 04:14:19 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/01/09 16:29:57 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	exit_error(void)
 {
 	ft_putstr_fd("Error\n", 2);
-	exit(EXIT_FAILURE);
+	return ;
 }

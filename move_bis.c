@@ -26,6 +26,7 @@ void	rotate_a(t_list **list_a)
 		last= last->next;
 	last->next = first;
 	first->next = NULL;
+	ft_putstr_fd("ra", 1);
 }
 
 void	rotate_b(t_list **list_b)
@@ -42,6 +43,7 @@ void	rotate_b(t_list **list_b)
 		last = last->next;
 	last->next = first;
 	first->next = NULL;
+	ft_putstr_fd("rb", 1);
 }
 
 void	reverse_rotate_a(t_list **list_a)
@@ -58,6 +60,7 @@ void	reverse_rotate_a(t_list **list_a)
 	before_last->next = NULL;
 	last->next = *list_a;
 	*list_a = last;
+	ft_putstr_fd("rra", 1);
 }
 
 void	reverse_rotate_b(t_list **list_b)
@@ -74,4 +77,5 @@ void	reverse_rotate_b(t_list **list_b)
 	before_last->next = NULL;
 	last->next = *list_b;
 	*list_b = last;
+	ft_putstr_fd("rrb", 1);
 }
