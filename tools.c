@@ -6,7 +6,7 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 04:11:56 by lumugot           #+#    #+#             */
-/*   Updated: 2025/01/15 00:14:18 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/01/15 00:35:16 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ long	ft_atol(char *str)
 		number = number * 10 + str[index] - '0';
 		index++;
 	}
+	if (ft_isalpha(str[index]))
+		exit_error();
 	return (number * sign);
 }
 

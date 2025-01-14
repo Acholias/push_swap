@@ -41,4 +41,7 @@ void	verif_overflow(int number);
 long	ft_atol(char *str);
 int		safe_atol_to_int(char *str);
 
+
+//Voir pour mon histoir de moyenne sur chaque moitie de la pile pour 
+//l'initialiser a l'endroit ou a l'enver dans la pile (gain de mouve ?)
 #endif
