@@ -37,11 +37,14 @@ void	reverse_rotate_a(t_list **list_a);
 void	reverse_rotate_b(t_list **list_b);
 
 int		exit_error(void);
-void	verif_overflow(int number);
 long	ft_atol(char *str);
 int		safe_atol_to_int(char *str);
+void	free_split(char **split);
+void	free_stack(t_stack *stack);
 
 
-//Voir pour mon histoir de moyenne sur chaque moitie de la pile pour 
+//Voir pour mon histoire de moyenne sur chaque moitie de la pile pour 
 //l'initialiser a l'endroit ou a l'enver dans la pile (gain de mouve ?)
+//La fonction qui va initialiser la pile dans ma liste chainee soit ma stack_a
+//Sera donc sois a l'endrois soit a l'envers je pense que je peu gagner quelque mouvements
 #endif

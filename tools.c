@@ -6,7 +6,7 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 04:11:56 by lumugot           #+#    #+#             */
-/*   Updated: 2025/01/15 00:35:16 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/01/15 14:10:13 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,6 @@ int	exit_error(void)
 	exit (1);
 }
 
-void	verif_overflow(int number)
-{
-	if (number < INT_MIN || number > INT_MAX)
-		exit_error();
-}
 
 long	ft_atol(char *str)
 {
@@ -61,4 +56,28 @@ int safe_atol_to_int(char *str)
         exit_error();
 
     return (int)result;
+}
+
+void	free_split(char **split)
+{
+	int	index;
+
+	index = 0;
+	while (split[index])
+	{
+		free(split[index]);
+		index++;
+	}
+	free(split);
+}
+
+void free_stack(t_stack *stack)
+{
+    t_stack *tmp;
+    while (stack)
+	{
+        tmp = stack;
+        stack = stack->next;
+        free(tmp);
+    }
 }
