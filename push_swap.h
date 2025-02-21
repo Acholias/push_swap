@@ -18,7 +18,7 @@
 # include <limits.h>
 # include "Libft/libft.h"
 
-#define CHUNK 2
+#define CHUNK 9
 
 //move.c
 void	swap_a(t_list **stack_a);
@@ -65,7 +65,7 @@ int	calculate_median(int *stack, int size);
 int	*list_to_array(t_list *stack, int size);
 
 //sort.c
-int		calculate_median_to_stack(t_list *stack, int size);
+int		count_moves(int argc, char **argv);
 void	full_sort_stack(t_list **stack_a , t_list **stack_b);
 
 #endif
