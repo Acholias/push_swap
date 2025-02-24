@@ -18,7 +18,13 @@
 # include <limits.h>
 # include "Libft/libft.h"
 
-#define CHUNK 9
+typedef struct s_chunk
+{
+	int	min;
+	int	max;
+	int	median;
+	int	count;
+}	t_chunk;
 
 //move.c
 void	swap_a(t_list **stack_a);
@@ -47,7 +53,7 @@ void	free_stack(t_list *stack);
 // tools_bis.c 
 int		stack_size(t_list *stack);
 int		check_sorted(t_list *stack);
-int 	find_min_value(t_list *stack_a);
+int		find_min_value(t_list *stack_a);
 int		select_sort(t_list **stack_a, t_list **list_b);
 
 //minim_sort.c
@@ -58,14 +64,23 @@ void	sort_4_values(t_list **stack_a, t_list **stack_b);
 void	sort_5_values(t_list **stack_a, t_list **stack_b);
 
 //quicksort.c
-void swap_value(int *a, int *b);
-int partitions(int *tab, int start, int end);
-void quicksort(int *tab, int start, int end);
-int	calculate_median(int *stack, int size);
-int	*list_to_array(t_list *stack, int size);
+void	swap_value(int *a, int *b);
+int		partitions(int *tab, int start, int end);
+void	quicksort(int *tab, int start, int end);
+int		calculate_median(int *stack, int size);
+int		*list_to_array(t_list *stack, int size);
+
+//sort_chunk.c
+void	init_chunk_limits(t_chunk *chunk, int *array, int index, int size);
+int		check_range_number_for_chunk(t_list *stack, int min, int max);
+void	push_to_stack_b(t_list **stack_a, t_list **stack_b, t_chunk *chunk);
+void	process_chunks(t_list **stack_a, t_list **stack_b, int *array, int len);
+void	separate_stack_by_chunk(t_list **stack_a, t_list **stack_b);
 
 //sort.c
-int		count_moves(int argc, char **argv);
-void	full_sort_stack(t_list **stack_a , t_list **stack_b);
+int		define_number_of_chunk(t_chunk *chunk, int size);
+void	search_max_and_index(t_list **stack_b, int *max_i, int *max_n);
+void	push_to_stack_a(t_list **stack_a, t_list **stack_b);
+void	full_sort_stack(t_list **stack_a, t_list **stack_b);
 
 #endif

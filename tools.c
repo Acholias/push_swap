@@ -6,7 +6,7 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 04:11:56 by lumugot           #+#    #+#             */
-/*   Updated: 2025/01/27 17:37:24 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/02/24 15:58:51 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	exit_error(void)
 	ft_putstr_fd("Error\n", 2);
 	exit (1);
 }
-
 
 long	ft_atol(char *str)
 {
@@ -48,14 +47,16 @@ long	ft_atol(char *str)
 	return (number * sign);
 }
 
-int safe_atol_to_int(char *str)
+int	safe_atol_to_int(char *str)
 {
-    long	result;
+	long	result;
 
+	if (ft_strlen(str) > 12)
+		exit_error();
 	result = ft_atol(str);
-    if (result > INT_MAX || result < INT_MIN)
-        exit_error();
-    return ((int)result);
+	if (result > INT_MAX || result < INT_MIN)
+		exit_error();
+	return ((int)result);
 }
 
 void	free_split(char **split)
@@ -71,13 +72,14 @@ void	free_split(char **split)
 	free(split);
 }
 
-void free_stack(t_list *stack)
+void	free_stack(t_list *stack)
 {
-    t_list *tmp;
-    while (stack)
+	t_list	*tmp;
+
+	while (stack)
 	{
-        tmp = stack;
-        stack = stack->next;
-        free(tmp);
-    }
+		tmp = stack;
+		stack = stack->next;
+		free(tmp);
+	}
 }

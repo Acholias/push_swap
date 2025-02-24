@@ -6,7 +6,7 @@
 #    By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/09 16:31:03 by lumugot           #+#    #+#              #
-#    Updated: 2025/02/16 17:48:25 by lumugot          ###   ########.fr        #
+#    Updated: 2025/02/24 14:59:59 by lumugot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,8 +27,8 @@ SRC = parse.c \
 		double_move.c \
 		minim_sort.c \
 		quicksort.c \
+		sort_chunk.c \
 		sort.c \
-
 
 OBJ = $(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 14:48:00 by lumugot           #+#    #+#             */
-/*   Updated: 2025/02/16 17:50:15 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/02/21 18:03:50 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 int	stack_size(t_list *stack)
 {
-    t_list  *current;
-    int     size;
+	t_list	*current;
+	int		size;
 
-    current = stack;
-    size = 0;
-    while (current)
-    {
-        size++;
-        current = current->next;
-    }
-    return (size);
+	current = stack;
+	size = 0;
+	while (current)
+	{
+		size++;
+		current = current->next;
+	}
+	return (size);
 }
 
 int	check_sorted(t_list *stack)
 {
 	int	temp;
 
-	while(stack->next)
+	while (stack->next)
 	{
 		temp = stack->number;
 		stack = stack->next;
@@ -43,34 +43,33 @@ int	check_sorted(t_list *stack)
 
 int	find_min_value(t_list *stack_a)
 {
-    int min_value;
-    t_list *current;
+	t_list	*current;
+	int		min_value;
 
-	min_value = stack_a->number;
 	current = stack_a;
-    while (current)
-    {
-        if (current->number < min_value)
-            min_value = current->number;
-        current = current->next;
-    }
-    return (min_value);
+	min_value = stack_a->number;
+	while (current)
+	{
+		if (current->number < min_value)
+			min_value = current->number;
+		current = current->next;
+	}
+	return (min_value);
 }
 
-
-int select_sort(t_list **stack_a, t_list **stack_b)
+int	select_sort(t_list **stack_a, t_list **stack_b)
 {
-    if (!stack_a || !(*stack_a))
-        return (0);
-    if ((stack_size(*stack_a)) == 2)
-        sort_2_values(stack_a);
-    else if (stack_size(*stack_a) == 3)
-        sort_3_values(stack_a);
-    else if (stack_size(*stack_a) == 4)
-        sort_4_values(stack_a, stack_b);
-    else if (stack_size(*stack_a) == 5)
-        sort_5_values(stack_a, stack_b);
-    else
-        full_sort_stack(stack_a, stack_b);
-    return(1);
+	if (!stack_a || !(*stack_a))
+		return (0);
+	if ((stack_size(*stack_a)) == 2)
+		sort_2_values(stack_a);
+	else if (stack_size(*stack_a) == 3)
+		sort_3_values(stack_a);
+	else if (stack_size(*stack_a) == 4)
+		sort_4_values(stack_a, stack_b);
+	else if (stack_size(*stack_a) == 5)
+		sort_5_values(stack_a, stack_b);
+	else
+		full_sort_stack(stack_a, stack_b);
+	return (1);
 }

@@ -61,7 +61,6 @@ void	reverse_rotate_a(t_list **stack_a)
 	ft_putendl_fd("rra", 1);
 }
 
-
 void	reverse_rotate_b(t_list **stack_b)
 {
 	t_list	*last;

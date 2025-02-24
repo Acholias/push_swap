@@ -6,7 +6,7 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 14:45:20 by lumugot           #+#    #+#             */
-/*   Updated: 2025/02/16 22:42:43 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/02/21 17:56:42 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	find_position(t_list *stack, int value)
 {
 	int	position;
-	
+
 	position = 0;
 	while (stack)
 	{
@@ -109,4 +109,3 @@ void	sort_5_values(t_list **stack_a, t_list **stack_b)
 	push_a(stack_b, stack_a);
 	push_a(stack_b, stack_a);
 }
-

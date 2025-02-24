@@ -19,7 +19,6 @@ void	double_swap(t_list **stack_a, t_list **stack_b)
 	ft_putendl_fd("ss", 1);
 }
 
-
 void	double_rotate(t_list **stack_a, t_list **stack_b)
 {
 	rotate_a(stack_a);

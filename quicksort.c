@@ -6,25 +6,25 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 17:39:09 by lumugot           #+#    #+#             */
-/*   Updated: 2025/02/16 17:52:19 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/02/21 18:01:24 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void swap_value(int *a, int *b)
+void	swap_value(int *a, int *b)
 {
-	int temp;
+	int	temp;
 
 	temp = *a;
 	*a = *b;
 	*b = temp;
 }
 
-int partitions(int *tab, int start, int end)
+int	partitions(int *tab, int start, int end)
 {
-	int pivot;
-	int start_tab;
+	int	pivot;
+	int	start_tab;
 
 	start_tab = start;
 	pivot = tab[start];
@@ -42,9 +42,9 @@ int partitions(int *tab, int start, int end)
 	return (end);
 }
 
-void quicksort(int *tab, int start, int end)
+void	quicksort(int *tab, int start, int end)
 {
-	int pivot_index;
+	int	pivot_index;
 
 	if (start < end)
 	{
@@ -56,8 +56,8 @@ void quicksort(int *tab, int start, int end)
 
 int	calculate_median(int *stack, int size)
 {
-	int *temp_tab;
-	int median;
+	int	*temp_tab;
+	int	median;
 	int	index;
 
 	if (size <= 0)
@@ -82,18 +82,18 @@ int	calculate_median(int *stack, int size)
 
 int	*list_to_array(t_list *stack, int size)
 {
-    int *array;
-    int index;
+	int	*array;
+	int	index;
 
 	index = 0;
-    array = malloc(sizeof(int) * size);
-    if (!array)
-        return (NULL);
-    while (stack && index < size)
-    {
-        array[index] = stack->number;
-        stack = stack->next;
-        index++;
-    }
-    return (array);
+	array = malloc(sizeof(int) * size);
+	if (!array)
+		return (NULL);
+	while (stack && index < size)
+	{
+		array[index] = stack->number;
+		stack = stack->next;
+		index++;
+	}
+	return (array);
 }

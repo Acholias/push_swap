@@ -6,7 +6,7 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 19:03:51 by lumugot           #+#    #+#             */
-/*   Updated: 2025/02/21 16:12:40 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/02/21 17:58:40 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,22 +97,22 @@ t_list	*init_list(int argc, char **argv)
 	return (stack_a);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    t_list *stack_a;
-    t_list *stack_b;
+	t_list	*stack_a;
+	t_list	*stack_b;
 
-    if (argc >= 2)
-    {
-        stack_b = NULL;
-        stack_a = init_list(argc, argv);
+	if (argc >= 2)
+	{
+		stack_b = NULL;
+		stack_a = init_list(argc, argv);
 		if (check_sorted(stack_a))
 			return (0);
-        select_sort(&stack_a, &stack_b);
-        free_stack(stack_a);
-        free_stack(stack_b);
-    }
-    else
-        exit_error();
-    return (0);
+		select_sort(&stack_a, &stack_b);
+		free_stack(stack_a);
+		free_stack(stack_b);
+	}
+	else
+		exit_error();
+	return (0);
 }
