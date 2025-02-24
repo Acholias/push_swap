@@ -6,7 +6,7 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 19:03:51 by lumugot           #+#    #+#             */
-/*   Updated: 2025/02/21 17:58:40 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/02/24 18:22:59 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	check_duplicate(char **str)
 	int	value;
 	int	value_ref;
 
-	if (!str)
+	if (!str || !(*str))
 		exit_error();
-	data_ref = 0;
+	data_ref = 1;
 	while (str[data_ref])
 	{
 		value_ref = safe_atol_to_int(str[data_ref]);
@@ -69,7 +69,7 @@ void	split_args(char *args, t_list **stack)
 		exit_error();
 	split = ft_split(args, ' ');
 	if (!split)
-		exit_error ();
+		exit_error();
 	index = 0;
 	while (split[index])
 	{
@@ -107,7 +107,11 @@ int	main(int argc, char **argv)
 		stack_b = NULL;
 		stack_a = init_list(argc, argv);
 		if (check_sorted(stack_a))
+		{
+			free_stack(stack_a);
+			free_stack(stack_b);		
 			return (0);
+		}
 		select_sort(&stack_a, &stack_b);
 		free_stack(stack_a);
 		free_stack(stack_b);
