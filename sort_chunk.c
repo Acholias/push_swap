@@ -6,7 +6,7 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 14:42:35 by lumugot           #+#    #+#             */
-/*   Updated: 2025/02/24 15:54:28 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/03/03 17:18:03 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	push_to_stack_b(t_list **stack_a, t_list **stack_b, t_chunk *chunk)
 
 void	process_chunks(t_list **stack_a, t_list **stack_b, int *array, int len)
 {
-	t_chunk	chunk;	
+	t_chunk	chunk;
 	int		index;
 
 	index = 0;

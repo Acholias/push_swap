@@ -6,7 +6,7 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 14:45:20 by lumugot           #+#    #+#             */
-/*   Updated: 2025/02/21 17:56:42 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/03/03 18:01:19 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,8 @@ void	sort_4_values(t_list **stack_a, t_list **stack_b)
 			reverse_rotate_a(stack_a);
 	}
 	push_b(stack_b, stack_a);
-	sort_3_values(stack_a);
+	if (!check_sorted(*stack_a))
+		sort_3_values(stack_a);
 	push_a(stack_a, stack_b);
 }
 

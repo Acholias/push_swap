@@ -6,7 +6,7 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 01:06:24 by lumugot           #+#    #+#             */
-/*   Updated: 2025/02/24 15:49:31 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/03/03 18:56:27 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,10 @@ void	push_to_stack_a(t_list **stack_a, t_list **stack_b)
 {
 	int	max_i;
 	int	max_n;
-	int	size;	
+	int	size;
+	int	flag;
 
+	flag = 0;
 	while (*stack_b)
 	{
 		search_max_and_index(stack_b, &max_i, &max_n);
@@ -63,17 +65,47 @@ void	push_to_stack_a(t_list **stack_a, t_list **stack_b)
 		if (max_i <= size / 2)
 		{
 			while (max_i-- > 0)
+			{
+				if ((*stack_b)->number == max_n -1)
+				{
+					push_a(stack_a, stack_b);
+					flag = 1;
+				}
+				if ((*stack_b)->number == max_n)
+					push_a(stack_a, stack_b);
 				rotate_b(stack_b);
+			}
+			if (flag == 1)
+			{
+				swap_a(stack_a);
+				flag = 0;
+			}
 		}
 		else
 		{
 			max_i = size - max_i;
 			while (max_i-- > 0)
+			{
+				if ((*stack_b)->number == max_n -1)
+				{
+					push_a(stack_a, stack_b);
+					flag = 1;
+				}
+				if ((*stack_b)->number == max_n)
+					push_a(stack_a, stack_b);
 				reverse_rotate_b(stack_b);
+			}
 		}
-		push_a(stack_a, stack_b);
+		if ((*stack_b)->number == max_n)
+			push_a(stack_a, stack_b);
+		if (flag == 1)
+		{
+			swap_a(stack_a);
+			flag = 0;
+		}
 	}
 }
+
 
 void	full_sort_stack(t_list **stack_a, t_list **stack_b)
 {

@@ -6,7 +6,7 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 04:11:56 by lumugot           #+#    #+#             */
-/*   Updated: 2025/02/24 18:33:05 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/03/03 18:45:29 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,12 @@ int	safe_atol_to_int(char *str)
 {
 	long	result;
 
-	if (ft_strlen(str) > 12)
-		exit_error();
 	str = ft_strtrim(str, " ");
 	if (ft_strlen(str) == 0)
+	{
+		free (str);
 		exit_error();
+	}
 	result = ft_atol(str);
 	if (result > INT_MAX || result < INT_MIN)
 		exit_error();
