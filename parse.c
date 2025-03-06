@@ -6,7 +6,7 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 19:03:51 by lumugot           #+#    #+#             */
-/*   Updated: 2025/03/03 18:44:34 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/03/06 16:07:01 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ t_list	*init_list(int argc, char **argv)
 
 	stack_a = NULL;
 	index = 1;
-	if (check_duplicate(argv) == 1)
+	if (check_duplicate(argv + 1) == 1)
 	{
 		free(stack_a);
 		exit_error();
@@ -106,7 +106,6 @@ t_list	*init_list(int argc, char **argv)
 	}
 	return (stack_a);
 }
-
 
 int	main(int argc, char **argv)
 {

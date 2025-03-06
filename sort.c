@@ -6,7 +6,7 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 01:06:24 by lumugot           #+#    #+#             */
-/*   Updated: 2025/03/03 18:56:27 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/03/06 16:03:51 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	push_to_stack_a(t_list **stack_a, t_list **stack_b)
 				reverse_rotate_b(stack_b);
 			}
 		}
-		if ((*stack_b)->number == max_n)
+		if (stack_b && (*stack_b) && (*stack_b)->number == max_n)
 			push_a(stack_a, stack_b);
 		if (flag == 1)
 		{
@@ -105,7 +105,6 @@ void	push_to_stack_a(t_list **stack_a, t_list **stack_b)
 		}
 	}
 }
-
 
 void	full_sort_stack(t_list **stack_a, t_list **stack_b)
 {
