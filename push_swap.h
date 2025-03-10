@@ -56,6 +56,9 @@ int		check_sorted(t_list *stack);
 int		find_min_value(t_list *stack_a);
 int		select_sort(t_list **stack_a, t_list **list_b);
 
+//mapping.c
+void    mapping_stack(t_list *stack);
+
 //minim_sort.c
 int		find_position(t_list *stack, int value);
 void	sort_2_values(t_list **stack_a);

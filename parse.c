@@ -6,7 +6,7 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 19:03:51 by lumugot           #+#    #+#             */
-/*   Updated: 2025/03/06 16:07:01 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/03/10 18:40:40 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	add_to_stack(t_list **head, int value)
 		exit_error ();
 	new_node->number = value;
 	new_node->next = NULL;
+	new_node->rank = -1;
 	if (!*head)
 		*head = new_node;
 	else

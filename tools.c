@@ -6,7 +6,7 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 04:11:56 by lumugot           #+#    #+#             */
-/*   Updated: 2025/03/06 15:51:17 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/03/10 18:49:41 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,23 @@ int	exit_error(void)
 	exit (1);
 }
 
+#include <stdio.h>
 long	ft_atol(char *str)
 {
 	long	number;
 	int		index;
 	int		sign;
 
-	if (!str)
-		return (0);
 	number = 0;
 	index = 0;
-	sign = 1;
-	while ((str[index] >= 9 && str[index] <= 13) || str[index] == 32)
-		index++;
-	if (str[index] == '-' || str[index] == '+')
+	sign = 1; 
+	if (str[index] == '-' && str[index + 1])
 	{
-		if (str[index] == '-')
-			sign = -1;
+		sign = -1;
 		index++;
 	}
+	while ((str[index] >= 9 && str[index] <= 13) || str[index] == 32)
+		index++;
 	while (str[index] >= '0' && str[index] <= '9')
 	{
 		number = number * 10 + str[index] - '0';
