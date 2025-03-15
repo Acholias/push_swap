@@ -22,6 +22,10 @@ typedef struct s_chunk
 {
 	int	min;
 	int	max;
+	int	max_n;
+	int	max_i;
+	int	size;
+	int	flag;
 	int	median;
 	int	count;
 }	t_chunk;
@@ -57,7 +61,7 @@ int		find_min_value(t_list *stack_a);
 int		select_sort(t_list **stack_a, t_list **list_b);
 
 //mapping.c
-void    mapping_stack(t_list *stack);
+void	mapping_stack(t_list *stack);
 
 //minim_sort.c
 int		find_position(t_list *stack, int value);
@@ -79,6 +83,11 @@ int		check_range_number_for_chunk(t_list *stack, int min, int max);
 void	push_to_stack_b(t_list **stack_a, t_list **stack_b, t_chunk *chunk);
 void	process_chunks(t_list **stack_a, t_list **stack_b, int *array, int len);
 void	separate_stack_by_chunk(t_list **stack_a, t_list **stack_b);
+
+//sort_tools.c
+void	search_max_and_index(t_list **stack_b, int *max_i, int *max_n);
+void	handle_first_half(t_list **stack_a, t_list **stack_b, t_chunk *data);
+void	handle_second_half(t_list **stack_a, t_list **stack_b, t_chunk *data);
 
 //sort.c
 int		define_number_of_chunk(t_chunk *chunk, int size);
