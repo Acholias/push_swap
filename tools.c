@@ -6,7 +6,7 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 04:11:56 by lumugot           #+#    #+#             */
-/*   Updated: 2025/03/13 11:03:50 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/03/15 18:14:38 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ long	ft_atol(char *str)
 		index++;
 	}
 	if (str[index] == '-' || str[index] == '+' || ft_isalpha(str[index]))
-		exit_error();
+		return (LONG_MAX);
 	return (number * sign);
 }
 
@@ -57,7 +57,10 @@ int	safe_atol_to_int(char *str)
 	}
 	result = ft_atol(str_bis);
 	if (result > INT_MAX || result < INT_MIN)
+	{
+		free(str_bis);
 		exit_error();
+	}
 	free (str_bis);
 	return ((int)result);
 }
