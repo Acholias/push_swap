@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools.c                                            :+:      :+:    :+:   */
+/*   parse_tools.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 04:11:56 by lumugot           #+#    #+#             */
-/*   Updated: 2025/03/15 18:14:38 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/03/27 17:57:10 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	exit_error(void)
 {
@@ -18,18 +18,19 @@ int	exit_error(void)
 	exit (1);
 }
 
-long	ft_atol(char *str)
+long	ft_atol(char *str, int sign)
 {
 	long	number;
 	int		index;
-	int		sign;
 
 	number = 0;
 	index = 0;
-	sign = 1;
-	if (str[index] == '-' && str[index + 1])
+	if ((str[index] == '+' || str[index] == '-') && str[index + 1] == '\0')
+		return (LONG_MAX);
+	if ((str[index] == '+' || str[index] == '-') && ft_isdigit(str[index + 1]))
 	{
-		sign = -1;
+		if (str[index] == '-')
+			sign = -1;
 		index++;
 	}
 	while ((str[index] >= 9 && str[index] <= 13) || str[index] == 32)
@@ -39,7 +40,8 @@ long	ft_atol(char *str)
 		number = number * 10 + str[index] - '0';
 		index++;
 	}
-	if (str[index] == '-' || str[index] == '+' || ft_isalpha(str[index]))
+	if (number < 0 || str[index] == '-' || str[index] == '+' || \
+			ft_isalpha(str[index]))
 		return (LONG_MAX);
 	return (number * sign);
 }
@@ -48,6 +50,7 @@ int	safe_atol_to_int(char *str)
 {
 	long	result;
 	char	*str_bis;
+	int		index;
 
 	str_bis = ft_strtrim(str, " ");
 	if (ft_strlen(str_bis) == 0)
@@ -55,7 +58,18 @@ int	safe_atol_to_int(char *str)
 		free (str_bis);
 		exit_error();
 	}
-	result = ft_atol(str_bis);
+	result = ft_atol(str_bis, 1);
+	index = -1;
+	while (str[++index])
+	{
+		if (str[index] == '-' || str[index] == '+')
+			index++;
+		if (!ft_isdigit(str[index]))
+		{
+			free(str_bis);
+			exit_error();
+		}
+	}
 	if (result > INT_MAX || result < INT_MIN)
 	{
 		free(str_bis);

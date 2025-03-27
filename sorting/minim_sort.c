@@ -6,11 +6,11 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 14:45:20 by lumugot           #+#    #+#             */
-/*   Updated: 2025/03/03 18:01:19 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/03/27 16:50:06 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	find_position(t_list *stack, int value)
 {

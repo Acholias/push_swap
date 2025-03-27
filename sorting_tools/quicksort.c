@@ -6,11 +6,11 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 17:39:09 by lumugot           #+#    #+#             */
-/*   Updated: 2025/03/08 17:47:43 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/03/27 16:50:13 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	swap_value(int *a, int *b)
 {

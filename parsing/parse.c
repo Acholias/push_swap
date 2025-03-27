@@ -6,11 +6,11 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 19:03:51 by lumugot           #+#    #+#             */
-/*   Updated: 2025/03/15 18:13:09 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/03/27 17:55:37 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	check_duplicate(char **str)
 {
@@ -66,7 +66,7 @@ void	split_args(char *args, t_list **stack)
 	int		index;
 	int		value;
 
-	if (!stack)
+	if (!stack && !(*stack))
 		exit_error();
 	split = ft_split(args, ' ');
 	if (!split)
@@ -77,6 +77,7 @@ void	split_args(char *args, t_list **stack)
 		exit_error();
 	}
 	index = 0;
+	value = 0;
 	while (split[index])
 	{
 		value = safe_atol_to_int(split[index]);
@@ -113,6 +114,8 @@ int	main(int argc, char **argv)
 	t_list	*stack_a;
 	t_list	*stack_b;
 
+	if (argc == 1)
+		return (0);
 	if (argc >= 2)
 	{
 		stack_b = NULL;

@@ -49,7 +49,7 @@ void	double_reverse_rotate(t_list **stack_a, t_list **stack_b);
 
 // tools.c
 int		exit_error(void);
-long	ft_atol(char *str);
+long	ft_atol(char *str, int sign);
 int		safe_atol_to_int(char *str);
 void	free_split(char **split);
 void	free_stack(t_list *stack);
@@ -59,9 +59,6 @@ int		stack_size(t_list *stack);
 int		check_sorted(t_list *stack);
 int		find_min_value(t_list *stack_a);
 int		select_sort(t_list **stack_a, t_list **list_b);
-
-//mapping.c
-void	mapping_stack(t_list *stack);
 
 //minim_sort.c
 int		find_position(t_list *stack, int value);

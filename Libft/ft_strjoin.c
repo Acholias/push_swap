@@ -62,5 +62,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	ft_strcpy(tab, (char *)s1);
 	ft_strcat(tab, (char *)s2);
+	free((char *)s1);
 	return (tab);
 }

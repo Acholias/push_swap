@@ -6,11 +6,11 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 17:49:29 by lumugot           #+#    #+#             */
-/*   Updated: 2025/03/15 17:52:54 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/03/27 16:50:22 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	search_max_and_index(t_list **stack_b, int *max_i, int *max_n)
 {

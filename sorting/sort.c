@@ -6,11 +6,11 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 01:06:24 by lumugot           #+#    #+#             */
-/*   Updated: 2025/03/15 17:50:10 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/03/27 16:50:09 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	define_number_of_chunk(t_chunk *chunk, int size)
 {
