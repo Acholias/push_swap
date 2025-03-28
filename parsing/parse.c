@@ -6,13 +6,13 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 19:03:51 by lumugot           #+#    #+#             */
-/*   Updated: 2025/03/27 17:55:37 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/03/28 13:40:52 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Include/push_swap.h"
 
-int	check_duplicate(char **str)
+static int	check_duplicate(char **str)
 {
 	int	data_ref;
 	int	data;
@@ -38,7 +38,7 @@ int	check_duplicate(char **str)
 	return (0);
 }
 
-void	add_to_stack(t_list **head, int value)
+static void	add_to_stack(t_list **head, int value)
 {
 	t_list	*new_node;
 	t_list	*current;
@@ -60,7 +60,7 @@ void	add_to_stack(t_list **head, int value)
 	}
 }
 
-void	split_args(char *args, t_list **stack)
+static void	split_args(char *args, t_list **stack)
 {
 	char	**split;
 	int		index;
@@ -89,7 +89,7 @@ void	split_args(char *args, t_list **stack)
 	free_split(split);
 }
 
-t_list	*init_list(int argc, char **argv)
+static t_list	*init_list(int argc, char **argv)
 {
 	t_list	*stack_a;
 	int		index;

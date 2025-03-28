@@ -6,11 +6,11 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 16:43:42 by lumugot           #+#    #+#             */
-/*   Updated: 2025/03/27 16:50:19 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/03/28 13:41:15 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Include/push_swap.h"
 
 int	stack_size(t_list *stack)
 {

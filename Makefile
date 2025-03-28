@@ -6,7 +6,7 @@
 #    By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/09 16:31:03 by lumugot           #+#    #+#              #
-#    Updated: 2025/03/27 18:32:42 by lumugot          ###   ########.fr        #
+#    Updated: 2025/03/28 13:33:45 by lumugot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRC = move/double_move.c \
 		move/move_bis.c \
 		move/move.c \
 		parsing/parse_tools.c \
+		parsing/clear_memory.c \
 		parsing/parse.c \
 		sorting/minim_sort.c \
 		sorting/sort.c \

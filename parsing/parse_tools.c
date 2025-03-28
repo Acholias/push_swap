@@ -6,11 +6,11 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 04:11:56 by lumugot           #+#    #+#             */
-/*   Updated: 2025/03/27 17:57:10 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/03/28 13:40:48 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Include/push_swap.h"
 
 int	exit_error(void)
 {
@@ -27,14 +27,14 @@ long	ft_atol(char *str, int sign)
 	index = 0;
 	if ((str[index] == '+' || str[index] == '-') && str[index + 1] == '\0')
 		return (LONG_MAX);
+	while ((str[index] >= 9 && str[index] <= 13) || str[index] == 32)
+		index++;
 	if ((str[index] == '+' || str[index] == '-') && ft_isdigit(str[index + 1]))
 	{
 		if (str[index] == '-')
 			sign = -1;
 		index++;
 	}
-	while ((str[index] >= 9 && str[index] <= 13) || str[index] == 32)
-		index++;
 	while (str[index] >= '0' && str[index] <= '9')
 	{
 		number = number * 10 + str[index] - '0';
@@ -63,11 +63,13 @@ int	safe_atol_to_int(char *str)
 	while (str[++index])
 	{
 		if (str[index] == '-' || str[index] == '+')
-			index++;
-		if (!ft_isdigit(str[index]))
 		{
-			free(str_bis);
-			exit_error();
+			index++;
+			if (!ft_isdigit(str[index]))
+			{
+				free(str_bis);
+				exit_error();
+			}
 		}
 	}
 	if (result > INT_MAX || result < INT_MIN)
@@ -77,29 +79,4 @@ int	safe_atol_to_int(char *str)
 	}
 	free (str_bis);
 	return ((int)result);
-}
-
-void	free_split(char **split)
-{
-	int	index;
-
-	index = 0;
-	while (split[index])
-	{
-		free(split[index]);
-		index++;
-	}
-	free(split);
-}
-
-void	free_stack(t_list *stack)
-{
-	t_list	*tmp;
-
-	while (stack)
-	{
-		tmp = stack;
-		stack = stack->next;
-		free(tmp);
-	}
 }

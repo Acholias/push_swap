@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Include/push_swap.h"
 
 void	double_swap(t_list **stack_a, t_list **stack_b)
 {

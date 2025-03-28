@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
-# include "Libft/libft.h"
+# include "../Libft/libft.h"
 
 typedef struct s_chunk
 {
@@ -47,14 +47,16 @@ void	reverse_rotate_b(t_list **stack_b);
 void	double_rotate(t_list **stack_a, t_list **stack_b);
 void	double_reverse_rotate(t_list **stack_a, t_list **stack_b);
 
-// tools.c
+//parse_tools.c
 int		exit_error(void);
 long	ft_atol(char *str, int sign);
 int		safe_atol_to_int(char *str);
+
+//clear_memory.c
 void	free_split(char **split);
 void	free_stack(t_list *stack);
 
-// tools_bis.c 
+// sort_parse.c
 int		stack_size(t_list *stack);
 int		check_sorted(t_list *stack);
 int		find_min_value(t_list *stack_a);
@@ -85,11 +87,10 @@ void	separate_stack_by_chunk(t_list **stack_a, t_list **stack_b);
 void	search_max_and_index(t_list **stack_b, int *max_i, int *max_n);
 void	handle_first_half(t_list **stack_a, t_list **stack_b, t_chunk *data);
 void	handle_second_half(t_list **stack_a, t_list **stack_b, t_chunk *data);
+void	push_to_stack_a(t_list **stack_a, t_list **stack_b);
 
 //sort.c
 int		define_number_of_chunk(t_chunk *chunk, int size);
-void	search_max_and_index(t_list **stack_b, int *max_i, int *max_n);
-void	push_to_stack_a(t_list **stack_a, t_list **stack_b);
 void	full_sort_stack(t_list **stack_a, t_list **stack_b);
 
 #endif
