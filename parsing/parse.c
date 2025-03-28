@@ -6,7 +6,7 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 19:03:51 by lumugot           #+#    #+#             */
-/*   Updated: 2025/03/28 13:40:52 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/03/28 18:05:26 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static void	split_args(char *args, t_list **stack)
 {
 	char	**split;
 	int		index;
-	int		value;
+	long	value;
 
 	if (!stack && !(*stack))
 		exit_error();
@@ -82,7 +82,7 @@ static void	split_args(char *args, t_list **stack)
 	{
 		value = safe_atol_to_int(split[index]);
 		if (value > INT_MAX || value < INT_MIN)
-			exit_error();
+			free_all(split, *stack);
 		add_to_stack(stack, value);
 		index++;
 	}
@@ -120,6 +120,7 @@ int	main(int argc, char **argv)
 	{
 		stack_b = NULL;
 		stack_a = init_list(argc, argv);
+		check_stack(stack_a);
 		if (check_sorted(stack_a))
 		{
 			free_stack(stack_a);

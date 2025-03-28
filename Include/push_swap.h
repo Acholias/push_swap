@@ -50,9 +50,12 @@ void	double_reverse_rotate(t_list **stack_a, t_list **stack_b);
 //parse_tools.c
 int		exit_error(void);
 long	ft_atol(char *str, int sign);
-int		safe_atol_to_int(char *str);
+long	safe_atol_to_int(char *str);
+void	check_stack(t_list *stack_a);
 
 //clear_memory.c
+void	free_str(char *str);
+void	free_all(char **split, t_list *stack);
 void	free_split(char **split);
 void	free_stack(t_list *stack);
 
