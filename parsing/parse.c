@@ -6,7 +6,7 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 19:03:51 by lumugot           #+#    #+#             */
-/*   Updated: 2025/03/28 18:05:26 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/03/31 21:29:16 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,11 @@ static void	add_to_stack(t_list **head, int value)
 	}
 }
 
+int	check_arg_lenght(char *arg)
+{
+	return (ft_strlen(arg) > 11);
+}
+
 static void	split_args(char *args, t_list **stack)
 {
 	char	**split;
@@ -81,7 +86,7 @@ static void	split_args(char *args, t_list **stack)
 	while (split[index])
 	{
 		value = safe_atol_to_int(split[index]);
-		if (value > INT_MAX || value < INT_MIN)
+		if (check_arg_lenght(split[index]) || value > INT_MAX || value < INT_MIN)
 			free_all(split, *stack);
 		add_to_stack(stack, value);
 		index++;

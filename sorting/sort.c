@@ -6,7 +6,7 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 01:06:24 by lumugot           #+#    #+#             */
-/*   Updated: 2025/03/28 13:41:00 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/03/31 21:14:29 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	define_number_of_chunk(t_chunk *chunk, int size)
 		chunk->count = 7;
 	if (size >= 400 && size <= 500)
 		chunk->count = 9;
+	if (size > 500)
+		chunk->count = 10;
 	return (chunk->count);
 }
 

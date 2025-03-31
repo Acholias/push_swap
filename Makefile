@@ -6,11 +6,12 @@
 #    By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/09 16:31:03 by lumugot           #+#    #+#              #
-#    Updated: 2025/03/28 13:33:45 by lumugot          ###   ########.fr        #
+#    Updated: 2025/03/30 15:26:36 by lumugot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
+NAME_BONUS = checker
 
 LIBFT_DIR = Libft
 
@@ -37,15 +38,7 @@ MAKEFLAGS += -s --no-print-directory
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
-	@i=0; while [ $$i -lt 50 ]; do \
-		RED=$$(($$i * 255 / 50)); \
-		GREEN=$$((255 - $$RED)); \
-		printf "\033[48;2;$$GREEN;$$RED;0m \033[0m"; \
-		i=$$(($$i + 1)); \
-		sleep 0.05; \
-	done; \
-	echo " "
-	sleep 1;
+	sleep 1
 	@echo "$$BANNER"
 
 $(NAME): $(OBJ) $(LIBFT)
